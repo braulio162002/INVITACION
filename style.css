@@ -104,9 +104,7 @@ body, html {
         object-position: 0% 50%; /* Empieza mostrando la Izquierda de la foto */
         transform: scale(1);
     }
-    50% {
-        transform: scale(1.1); /* Hace un pequeño zoom lento en el centro */
-    }
+    
     100% {
         object-position: 100% 50%; /* Termina mostrando la Derecha de la foto */
         transform: scale(1);
@@ -219,3 +217,4 @@ body, html {
     display: flex; justify-content: center; align-items: center; border-radius: 50%;
 
 }
+
