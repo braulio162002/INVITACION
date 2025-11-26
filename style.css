@@ -20,6 +20,14 @@ body {
     text-align: center;
 }
 
+html {
+    scroll-behavior: smooth; /* Hace que los botones de navegación se deslicen suavemente */
+}
+
+body, html {
+    overflow-x: hidden; /* Evita movimientos laterales bruscos (lo "tosco") */
+    width: 100%;
+}
 /* === PANTALLA DE INICIO (SPLASH) === */
 .splash-screen {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -68,10 +76,41 @@ body {
     display: flex;
 }
 /* Foto de Fondo */
+/* ==================================== */
+/* 2. ANIMACIÓN DE LA FOTO DE FONDO     */
+/* ==================================== */
+
 .header-bg-image {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover; /* Esto hace que la foto cubra todo sin deformarse */
-    z-index: -1; /* Esto la manda al fondo, detrás del texto */
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    
+    /* Cubre toda la pantalla para que no queden espacios negros */
+    object-fit: cover; 
+    z-index: -1;
+    
+    /* ANIMACIÓN: Se mueve suavemente de un lado a otro */
+    animation: panPhoto 30s infinite alternate linear;
+    
+    /* Truco para acelerar el rendimiento en celular y que no se trabe */
+    will-change: transform, object-position;
+}
+
+/* Definición del movimiento (De izquierda a derecha + Zoom sutil) */
+@keyframes panPhoto {
+    0% {
+        object-position: 0% 50%; /* Empieza mostrando la Izquierda de la foto */
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Hace un pequeño zoom lento en el centro */
+    }
+    100% {
+        object-position: 100% 50%; /* Termina mostrando la Derecha de la foto */
+        transform: scale(1);
+    }
 }
 .header-overlay {
     background: rgba(0,0,0,0.5); /* Oscurecer video para leer texto */
@@ -178,4 +217,5 @@ body {
     position: absolute; top: 20px; right: 20px;
     background: rgba(255,255,255,0.2); width: 40px; height: 40px;
     display: flex; justify-content: center; align-items: center; border-radius: 50%;
+
 }
