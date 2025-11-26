@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Invitación de Graduación</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Great+Vibes&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="splashScreen" class="splash-screen">
+        <div class="splash-content">
+            <h1 class="splash-title">Bienvenido</h1>
+            <p class="splash-subtitle">A nuestra celebración especial</p>
+            
+            <div class="input-group">
+                <label>Tu nombre:</label>
+                <input type="text" id="graduadoNameInput" placeholder="Escribe tu nombre graduado!!...">
+            </div>
+            
+            <div class="music-prompt">
+                <p>¿Deseas música de fondo?</p>
+                <div class="music-buttons">
+                    <button id="musicYes" class="btn-music">Sí <i class="fa-solid fa-music"></i></button>
+                    <button id="musicNo" class="btn-music">No <i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+            </div>
+            
+            <button id="enterButton" class="btn-enter" disabled>VER INVITACIÓN</button>
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="img/your_music.mp3" type="audio/mpeg">
+    </audio>
+    
+    <header class="main-header">
+        
+        <img src="img/Foto.jpg" class="header-bg-image" alt="Foto de la Promoción">
+        
+        <div class="header-overlay">
+            
+            <div class="music-icon-wrapper">
+                 <a href="javascript:void(0);" id="playPauseMusic">
+                    <i class="fa-solid fa-music"></i>
+                 </a>
+            </div>
+            
+            <p class="event-type animate__animated animate__fadeInDown">MI FIESTA DE GRADUACIÓN</p>
+            
+            <div class="frame-decoration">
+                <h1 class="main-name animate__animated animate__zoomIn animate__delay-1s">
+                    [Nombre del Graduado]
+                </h1>
+                
+                <p class="class-year animate__animated animate__fadeInUp animate__delay-1s">
+                    6 PRIMARIA SAN ISIDRO
+                </p>
+                
+                <p class="motto animate__animated animate__fadeInUp animate__delay-2s">
+                    Huellas Inolvidables
+                </p>
+            </div>
+
+            <div id="timer" class="countdown-timer animate__animated animate__fadeInUp animate__delay-2s">
+                <div class="timer-box"><span id="days">00</span><p>DÍAS</p></div>
+                <div class="timer-box"><span id="hours">00</span><p>HS</p></div>
+                <div class="timer-box"><span id="minutes">00</span><p>MIN</p></div>
+                <div class="timer-box"><span id="seconds">00</span><p>SEG</p></div>
+            </div>
+
+            <img src="img/gorro2.png" class="cap-image animate__animated animate__fadeInUp animate__delay-3s">
+            
+        </div>
+    </header>
+    
+    <main>
+        
+        <section class="events-section">
+            
+            <div class="event-card" data-aos="fade-up">
+                <img src="img/diploma.png" class="event-icon" alt="Diploma">
+                
+                <h2 class="cursive-title">Ceremonia de Graduación</h2>
+                
+                <div class="date-box">DÍA Y HORARIO</div>
+                <p class="event-date">07 • 12 • 2025 - 17:00</p>
+                
+                <div class="location-box">LUGAR</div>
+                <p class="event-place">"Casa Blanca", Av. Industrial</p>
+                
+                <div class="buttons-row">
+                    <a href="#" class="btn-outline"><i class="fa-regular fa-calendar"></i> AGENDAR</a>
+                    <a href="#" class="btn-outline"><i class="fa-solid fa-location-dot"></i> ¿CÓMO LLEGAR?</a>
+                </div>
+            </div>
+
+            <div class="event-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="img/confeti.png" class="event-icon" alt="Fiesta">
+                
+                <h2 class="cursive-title">Fiesta de Graduación</h2>
+                
+                <div class="date-box">DÍA Y HORARIO</div>
+                <p class="event-date">07 • 12 • 2025 - 22:00</p>
+                
+                <div class="location-box">LUGAR</div>
+                <p class="event-place">"Casa Blanca", Casa de Eventos</p>
+                
+                <div class="buttons-row">
+                    <a href="#" class="btn-outline"><i class="fa-regular fa-calendar"></i> AGENDAR</a>
+                    <a href="[LINK_GOOGLE_MAPS]" target="_blank" class="btn-outline"><i class="fa-solid fa-location-dot"></i> ¿CÓMO LLEGAR?</a>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="map-section" data-aos="fade-up">
+            <h2 class="cursive-title white-text">Ubicación</h2>
+            <div class="map-frame">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.5377474901406!2d-75.74805882513833!3d-14.045392786377771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9110e2ccda049f09%3A0xe38da72ab74e5138!2sCasa%20Blanca%20Eventos!5e0!3m2!1ses-419!2spe!4v1764114802682!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        
+        <section class="details-section">
+            
+            <div class="detail-block" data-aos="fade-up">
+                <i class="fa-solid fa-shirt detail-icon"></i>
+                <h3 class="cursive-subtitle">Dress Code</h3>
+                <p>Elegante</p>
+                <hr class="gold-line">
+            </div>
+
+            <div class="detail-block" data-aos="fade-up">
+                <i class="fa-solid fa-gift detail-icon"></i>
+                <h3 class="cursive-subtitle">Regalos</h3>
+                <p>El mejor regalo es tu presencia, pero si deseas tener un detalle:</p>
+                <button class="btn-outline-dark"> CUENTA BANCARIA-YAPE-PLIN :) </button>
+            </div>
+
+        </section>
+
+        <footer class="footer-section">
+            <p class="thanks">¡Gracias por acompañarme!</p>
+            <div class="footer-motto">#HuellasInolvidables2025</div>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init(); </script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+/* ==================================== */
+/* PALETA DE COLORES ELEGANTE */
+/* ==================================== */
+:root {
+    --gold: #BFA37C;       /* Dorado Champagne (elegante, no amarillo) */
+    --gold-dark: #9e8662;
+    --text-dark: #555555;  /* Gris oscuro para texto */
+    --bg-light: #FAFAFA;   /* Blanco hueso */
+    --bg-dark: #222222;    /* Fondo oscuro para footer/splash */
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+/* === PANTALLA DE INICIO (SPLASH) === */
+.splash-screen {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--bg-dark); /* Fondo Oscuro Elegante */
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999; transition: opacity 0.8s;
+}
+.splash-content {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px; border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    width: 90%; max-width: 400px; color: white;
+}
+.splash-title { font-family: 'Great Vibes', cursive; font-size: 3em; margin: 0; color: var(--gold); }
+.splash-subtitle { letter-spacing: 2px; font-size: 0.9em; margin-bottom: 30px; opacity: 0.8; }
+
+.input-group { text-align: left; margin-bottom: 20px; }
+.input-group label { display: block; font-size: 0.9em; margin-bottom: 5px; color: var(--gold); }
+.name-input {
+    width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #444;
+    background: rgba(255,255,255,0.1); color: white; text-align: center; font-size: 1.1em;
+}
+
+.btn-music {
+    background: transparent; border: 1px solid var(--gold); color: var(--gold);
+    padding: 8px 20px; border-radius: 20px; margin: 0 5px; cursor: pointer; transition: 0.3s;
+}
+.btn-music.selected { background: var(--gold); color: #000; }
+
+.btn-enter {
+    background: linear-gradient(45deg, var(--gold), #d4c3a3);
+    border: none; width: 100%; padding: 15px; border-radius: 50px;
+    font-weight: bold; letter-spacing: 2px; margin-top: 20px; cursor: pointer;
+}
+.btn-enter:disabled { opacity: 0.5; cursor: not-allowed; background: #555; }
+.hidden { opacity: 0; visibility: hidden; }
+
+
+/* === ENCABEZADO CON VIDEO === */
+.main-header {
+    height: 100vh;background-image: url('img/marco2.png'); 
+    background-size: cover; /* Asegura que el marco cubra todo el fondo */
+    background-position: center; 
+    background-attachment: fixed; /* Efecto parallax opcional */
+    display: flex;
+}
+/* Foto de Fondo */
+.header-bg-image {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; /* Esto hace que la foto cubra todo sin deformarse */
+    z-index: -1; /* Esto la manda al fondo, detrás del texto */
+}
+.header-overlay {
+    background: rgba(0,0,0,0.5); /* Oscurecer video para leer texto */
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    color: white; padding: 20px;
+}
+
+.event-type { letter-spacing: 4px; font-size: 0.8em; margin-bottom: 10px; opacity: 0.9; }
+.main-name {
+    font-family: 'Oswald', sans-serif; font-size: 4.5em; line-height: 1; margin: 10px 0;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+.motto {
+    font-family: 'Great Vibes', cursive; font-size: 3.5em; color: var(--gold);
+    margin: 0 0 30px 0; text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+/* Contador Estilo Minimalista */
+.countdown-timer { display: flex; gap: 15px; margin-bottom: 20px; }
+.timer-box {
+    border: 1px solid rgba(255,255,255,0.3); border-radius: 50%;
+    width: 65px; height: 65px; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; background: rgba(0,0,0,0.3);
+}
+.timer-box span { font-weight: bold; font-size: 1.4em; }
+.timer-box p { font-size: 0.6em; margin: 0; }
+
+.cap-image { width: 80px; filter: brightness(0) invert(1); margin-top: 10px; opacity: 0.8; }
+
+
+/* === SECCIÓN DE EVENTOS (CEREMONIA Y FIESTA) === */
+.events-section {
+    padding: 60px 20px; background-color: white;
+}
+
+/* Tarjeta de Evento (Estilo Referencia) */
+.event-card {
+    background: #fff; 
+    margin-bottom: 60px;
+}
+.event-icon { width: 60px; margin-bottom: 10px; } /* Iconos Diploma/Confeti */
+
+.cursive-title {
+    font-family: 'Great Vibes', cursive; font-size: 3em; color: var(--gold);
+    margin: 10px 0 20px 0; font-weight: normal;
+}
+
+.date-box, .location-box {
+    display: inline-block; border: 1px solid #ccc; padding: 5px 15px;
+    font-size: 0.7em; letter-spacing: 2px; color: #888; margin-top: 15px;
+}
+.event-date, .event-place {
+    font-size: 1.1em; margin: 10px 0 20px 0; font-weight: 500;
+}
+
+.buttons-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.btn-outline {
+    text-decoration: none; color: var(--text-dark);
+    border: 1px solid var(--text-dark); padding: 10px 20px;
+    border-radius: 30px; font-size: 0.8em; letter-spacing: 1px;
+    transition: 0.3s;
+}
+.btn-outline:hover { background: var(--gold); border-color: var(--gold); color: white; }
+
+
+/* === SECCIÓN MAPA (Fondo Oscuro para contraste) === */
+.map-section {
+    background-color: var(--bg-dark); padding: 50px 20px; color: white;
+}
+.white-text { color: white !important; }
+.map-frame {
+    border: 5px solid var(--gold); border-radius: 10px; overflow: hidden;
+    max-width: 800px; margin: 0 auto;
+}
+
+
+/* === SECCIÓN DETALLES ADICIONALES === */
+.details-section { padding: 60px 20px; background-color: #FDFBF7; }
+.detail-block { margin-bottom: 50px; }
+.detail-icon { font-size: 2.5em; color: var(--gold); margin-bottom: 10px; }
+.cursive-subtitle {
+    font-family: 'Great Vibes', cursive; font-size: 2.5em; color: var(--gold-dark);
+    margin: 10px 0;
+}
+.gold-line { border: 0; height: 1px; background: var(--gold); width: 100px; margin: 20px auto; }
+
+.btn-outline-dark {
+    background: transparent; border: 1px solid var(--text-dark);
+    padding: 12px 30px; border-radius: 30px; cursor: pointer; letter-spacing: 1px;
+}
+
+
+/* === FOOTER === */
+.footer-section {
+    background-color: var(--bg-dark); color: #888; padding: 40px 20px;
+}
+.thanks { font-family: 'Great Vibes', cursive; font-size: 2em; color: white; margin-bottom: 10px; }
+.footer-motto { color: var(--gold); letter-spacing: 2px; font-size: 0.9em; }
+
+/* Control de Música Flotante */
+.music-icon-wrapper a { color: white; font-size: 1.5em; text-decoration: none; }
+.music-icon-wrapper {
+    position: absolute; top: 20px; right: 20px;
+    background: rgba(255,255,255,0.2); width: 40px; height: 40px;
+    display: flex; justify-content: center; align-items: center; border-radius: 50%;
+}
